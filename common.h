@@ -3,7 +3,8 @@
 
 extern int yylex_init(void**);
 extern int yylex_destroy(void*);
-extern int yylex(); 
+extern int yylex(int* value, void* scanner);
+ 
 extern int yyparse(void* scanner, int* value); 
 extern void yyerror(void* scanner, int* value, const char* s);
   

@@ -5,10 +5,10 @@ FLEX=flex
 parser: parser.o scanner.o
 	$(CC) -o parser scanner.o parser.o
      
-parser.c: parser.y
-	$(BISON) -t -d -o parser.c parser.y
+parser.c parser.h: parser.y common.h
+	$(BISON) -d -o parser.c parser.y
          
-scanner.c: scanner.l
+scanner.c: scanner.l common.h
 	$(FLEX) -o scanner.c scanner.l
              
 clean:
