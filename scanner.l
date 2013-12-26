@@ -1,5 +1,5 @@
 %{
-#include "common.h"
+#include <stdio.h>
 #include "parser.h"
 %}
      
@@ -7,14 +7,13 @@
 WHITESPACE [ \n\r\t]+
 DIGITS [0-9]+
 ANY_CHAR .
+
+%option outfile="scanner.c" header-file="scanner.h"
+%option warn nodefault
  
-%option case-insensitive
-%option reentrant
-/*%option debug*/
+%option reentrant noyywrap never-interactive nounistd
 %option bison-bridge
-/*%option bison-locations*/
-%option noyywrap
-  
+
 %%
    
 {WHITESPACE} /* Ignore */ ;

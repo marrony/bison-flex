@@ -1,14 +1,17 @@
 bison-flex
 ==========
 
-Simple calculator using bison+flex
+**Simple calculator using bison+flex**
 
 To compile type:
 
-make
+`make`
 
 To execute type:
 
-echo '1 + 2 * 3' | ./parser
+`echo '1 + 2 * 3' | ./parser`
 
-You should see 7 in the console
+You should see:
+
+`result: 7`
+
